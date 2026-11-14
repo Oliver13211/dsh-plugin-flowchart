@@ -1,0 +1,15 @@
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# 系统与编辑器
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# 本地临时
+tmp/
+.cache/

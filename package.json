@@ -1,0 +1,42 @@
+{
+  "name": "@local/dsh-plugin-flowchart",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "FlowChart：在对话右侧边栏渲染流程图，帮助代理把难懂的过程、分支与结构画出来",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "client/*.js",
+    "lib/*.js",
+    "test/*.mjs",
+    "scripts/*.mjs",
+    "samples/*.svg",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "scripts": {
+    "build:client": "node scripts/build-client.mjs",
+    "test": "node test/dsl.test.mjs && node test/m1.test.mjs && node test/layout.test.mjs && node test/svg.test.mjs && node test/tool-contract.test.mjs && node test/m4.test.mjs && node test/persistence.test.mjs && node test/client-view.test.mjs && node test/client-bundle.test.mjs",
+    "samples": "node test/samples.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  }
+}

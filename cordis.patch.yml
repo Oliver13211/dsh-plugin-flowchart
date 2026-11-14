@@ -1,0 +1,4 @@
+- insert:
+    - id: flowchart
+      name: '@local/dsh-plugin-flowchart'
+      config: {}
